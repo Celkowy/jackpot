@@ -1,27 +1,30 @@
-const dra = new Draw()
-const wal = new Wallet()
+const draw = new Draw()
+const wallet = new Wallet()
 const stats = new Statistics()
-let credits = document.querySelector('p.credits')
-let games = document.querySelector('p.games')
-let win = document.querySelector('p.win')
-let lose = document.querySelector('p.lose')
-let lastResult = document.querySelector('p.last-result')
-
+let credits = document.querySelector('.credits')
+let games = document.querySelector('.games')
+let wins = document.querySelector('.win')
+let loses = document.querySelector('.lose')
+let lastResult = document.querySelector('.last-result')
 const form = document.querySelector('.form')
-const text = document.querySelector('.text')
+const inputValue = document.querySelector('.text')
 
 form.addEventListener('submit', e => {
   e.preventDefault()
-  let check = wal.updateCredit()
-  if (text.value != '' && text.value > 0 && check >= text.value) {
-    dra.randomizeCardColor()
-    const result = dra.result()
-    wal.canPlay(parseInt(text.value), result)
-    stats.countGameStats(result)
-    wal.updateCredit()
-    text.value = ''
-  } else {
+
+  if (inputValue.value > 0 && wallet.updateCredit() >= inputValue.value) {
+    draw.randomizeCardColor()
+    const resultOfBet = draw.result()
+    wallet.canPlay(inputValue.value, resultOfBet)
+    stats.countGameStats(resultOfBet)
+    wallet.updateCredit()
+    inputValue.value = ''
+  } else if (wallet.updateCredit() < inputValue.value) {
+    alert('You do not have that much money')
+  } else if (inputValue.value == '') {
     alert('Insert value')
+  } else if (wallet.updateCredit() >= 0) {
+    alert('Insert at least 1$')
   }
 })
 

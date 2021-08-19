@@ -7,9 +7,9 @@ class Draw {
       let timer
       const random = randomNumber(0, 1)
       if (random) {
-        timer = 100
+        timer = 200
       } else {
-        timer = 300
+        timer = 400
       }
 
       cards.forEach(card => {
@@ -20,7 +20,7 @@ class Draw {
           card.style.opacity = 1
         }, timer)
 
-        random ? (timer += 50) : (timer -= 50)
+        random ? (timer += 100) : (timer -= 100)
       })
     }
 

@@ -6,9 +6,9 @@ class Statistics {
 
     this.countGameStats = function (result) {
       if (result == '+') {
-        win.innerHTML = `${++_wins}`
+        wins.innerHTML = `${++_wins}`
       } else if (result == '-') {
-        lose.innerHTML = `${++_loses}`
+        loses.innerHTML = `${++_loses}`
       }
       games.innerHTML = `${++_totalGames}`
     }
