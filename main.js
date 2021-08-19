@@ -21,7 +21,7 @@ form.addEventListener('submit', e => {
   } else if (wallet.updateBalance() < inputValue.value) {
     alert('You do not have that much money')
   } else if (inputValue.value == '') {
-    alert('Insert value')
+    alert('Insert $')
   } else if (wallet.updateBalance() >= 0) {
     alert('Insert at least 1$')
   }
