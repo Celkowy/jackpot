@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Jackpot</title>
+  </head>
+  <body>
+    <div class="main">
+      <div class="wrapper">
+        <div class="card_1"></div>
+        <div class="card_2"></div>
+        <div class="card_3"></div>
+      </div>
+
+      <form class="form">
+        <input type="number" step="5" class="text" />
+        <button class="click" type="tekst">Let roll!</button>
+      </form>
+      <div class="stats-info">
+        <div class="in-one-line">
+          <span>Credits:</span>
+          <p class="credits margin">100$</p>
+        </div>
+
+        <div class="in-one-line">
+          <span>Game result:</span>
+          <p class="last-result margin"></p>
+        </div>
+
+        <div class="in-one-line">
+          <span>Games:</span>
+          <p class="games margin">0</p>
+        </div>
+
+        <div class="in-one-line">
+          <span>Wins:</span>
+          <p class="win margin">0</p>
+        </div>
+
+        <div class="in-one-line">
+          <span>Loses:</span>
+          <p class="lose margin">0</p>
+        </div>
+      </div>
+    </div>
+    <script src="Draw.js"></script>
+    <script src="Wallet.js"></script>
+    <script src="Statisticts.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
