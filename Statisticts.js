@@ -4,7 +4,7 @@ class Statistics {
     let _wins = 0
     let _loses = 0
 
-    this.countGameStats = function (result) {
+    this.countGameStats = result => {
       if (result == '+') {
         wins.innerHTML = `${++_wins}`
       } else if (result == '-') {

@@ -2,7 +2,7 @@ class Wallet {
   constructor() {
     let _actualBalance = 100
 
-    this.canPlay = function (betValue, operation) {
+    this.canPlay = (betValue, operation) => {
       if (operation === '+') {
         _actualBalance += betValue * 3
         lastResult.classList.remove('red')
@@ -16,7 +16,7 @@ class Wallet {
       }
     }
 
-    this.updateCredit = function () {
+    this.updateBalance = () => {
       credits.innerHTML = `${_actualBalance}$`
       return _actualBalance
     }

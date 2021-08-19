@@ -12,22 +12,21 @@ const inputValue = document.querySelector('.text')
 form.addEventListener('submit', e => {
   e.preventDefault()
 
-  if (inputValue.value > 0 && wallet.updateCredit() >= inputValue.value) {
+  if (inputValue.value > 0 && wallet.updateBalance() >= inputValue.value) {
     draw.randomizeCardColor()
-    const resultOfBet = draw.result()
-    wallet.canPlay(inputValue.value, resultOfBet)
-    stats.countGameStats(resultOfBet)
-    wallet.updateCredit()
+    wallet.canPlay(inputValue.value, draw.resultOfBet())
+    stats.countGameStats(draw.resultOfBet())
+    wallet.updateBalance()
     inputValue.value = ''
-  } else if (wallet.updateCredit() < inputValue.value) {
+  } else if (wallet.updateBalance() < inputValue.value) {
     alert('You do not have that much money')
   } else if (inputValue.value == '') {
     alert('Insert value')
-  } else if (wallet.updateCredit() >= 0) {
+  } else if (wallet.updateBalance() >= 0) {
     alert('Insert at least 1$')
   }
 })
 
-function randomNumber(min, max) {
+const randomNumber = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1)) + min
 }

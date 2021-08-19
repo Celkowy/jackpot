@@ -3,7 +3,7 @@ let cards = [document.querySelector('.card_1'), document.querySelector('.card_2'
 
 class Draw {
   constructor() {
-    this.randomizeCardColor = function () {
+    this.randomizeCardColor = () => {
       let timer
       const random = randomNumber(0, 1)
       if (random) {
@@ -24,7 +24,7 @@ class Draw {
       })
     }
 
-    this.result = function () {
+    this.resultOfBet = () => {
       const map = cards.map(card => card.style.background)
 
       return new Set(map).size != 2 ? '+' : '-'
