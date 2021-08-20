@@ -36,7 +36,7 @@ form.addEventListener('submit', e => {
   } else if (inputValue.value == '') {
     alert('Insert $')
   } else if (wallet.updateBalance() >= 0) {
-    alert('Insert at least 1$')
+    alert('Insert at least 5$')
   }
 })
 
