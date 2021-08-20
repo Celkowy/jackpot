@@ -11,13 +11,26 @@ const inputValue = document.querySelector('.text')
 
 form.addEventListener('submit', e => {
   e.preventDefault()
-
+  const random = randomNumber(0, 1)
   if (inputValue.value > 0 && wallet.updateBalance() >= inputValue.value) {
-    draw.randomizeCardColor()
-    wallet.canPlay(inputValue.value, draw.resultOfBet())
-    stats.countGameStats(draw.resultOfBet())
-    wallet.updateBalance()
-    inputValue.value = ''
+    draw.randomizeCardColor(random)
+
+    if (random) {
+      animation.forEach(card => card.classList.add('rotate'))
+    } else {
+      animation.forEach(card => card.classList.add('rotate-back'))
+    }
+    setTimeout(() => {
+      if (random) {
+        animation.forEach(card => card.classList.remove('rotate'))
+      } else {
+        animation.forEach(card => card.classList.remove('rotate-back'))
+      }
+      wallet.canPlay(inputValue.value, draw.resultOfBet())
+      stats.countGameStats(draw.resultOfBet())
+      wallet.updateBalance()
+      inputValue.value = ''
+    }, 1250)
   } else if (wallet.updateBalance() < inputValue.value) {
     alert('You do not have that much money')
   } else if (inputValue.value == '') {

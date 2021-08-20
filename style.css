@@ -28,12 +28,44 @@ body {
 .card_2,
 .card_3,
 .stats-info {
-  background-color: #fff;
-  height: 250px;
-  width: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 275px;
+  width: 275px;
   margin: 15px;
   border-radius: 10px;
   box-shadow: 0px 0px 7px 4px rgba(0, 0, 0, 0.19);
+}
+
+.card_1.rotate,
+.card_2.rotate,
+.card_3.rotate {
+  animation: rotate 1.2s ease-in-out;
+}
+
+.card_1.rotate-back,
+.card_2.rotate-back,
+.card_3.rotate-back {
+  animation: rotateBack 1.2s ease-in-out;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotateBack {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
 }
 
 .stats-info {
@@ -70,7 +102,6 @@ button {
 }
 
 .text {
-  padding-left: 5px;
   text-align: center;
   font-weight: 600;
   outline: none;
