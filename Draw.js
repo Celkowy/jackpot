@@ -20,7 +20,7 @@ class Draw {
       cards.forEach((card, index, table) => {
         card.style.opacity = 0
 
-        table[index].src = `/icons/${colorsTable[randomNumber(0, 2)]}${window.innerWidth > 480 ? 256 : 80}.png`
+        table[index].src = `./icons/${colorsTable[randomNumber(0, 2)]}${window.innerWidth > 480 ? 256 : 80}.png`
 
         setTimeout(() => {
           card.style.opacity = 1
