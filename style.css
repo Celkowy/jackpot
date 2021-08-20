@@ -15,9 +15,8 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: grid;
+  justify-items: center;
 }
 
 .wrapper {
@@ -126,6 +125,17 @@ form {
   .main {
     top: 55%;
   }
+
+  .main .wrapper {
+    order: 1;
+  }
+  .main .form {
+    order: 3;
+  }
+
+  .main .stats-info {
+    order: 2;
+  }
   .card_1,
   .card_2,
   .card_3 {
@@ -138,6 +148,7 @@ form {
     font-size: 14px;
     width: 150px;
     height: 175px;
+    margin: 20px 0 0;
   }
 
   .form {
