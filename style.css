@@ -23,6 +23,12 @@ body {
   display: flex;
 }
 
+.in-line {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+}
+
 .card_1,
 .card_2,
 .card_3,
@@ -35,6 +41,10 @@ body {
   margin: 15px;
   border-radius: 10px;
   box-shadow: 0px 0px 7px 4px rgba(0, 0, 0, 0.19);
+}
+
+.stats-info {
+  width: 350px;
 }
 
 .card_1.rotate,
@@ -107,7 +117,7 @@ button {
 }
 
 form {
-  margin: 15px 0;
+  margin: 30px 0;
   width: 360px;
   display: flex;
   justify-content: space-between;
@@ -124,6 +134,10 @@ form {
 @media (max-width: 480px) {
   .main {
     top: 55%;
+  }
+
+  .wrapper {
+    margin-top: 20px;
   }
 
   .main .wrapper {
@@ -145,8 +159,8 @@ form {
   }
 
   .stats-info {
+    width: 225px;
     font-size: 14px;
-    width: 150px;
     height: 175px;
     margin: 20px 0 20px;
   }
