@@ -108,9 +108,8 @@ button {
 }
 
 form {
-  width: 325px;
   margin: 15px 0;
-
+  width: 360px;
   display: flex;
   justify-content: space-between;
 }
@@ -124,6 +123,9 @@ form {
 }
 
 @media (max-width: 480px) {
+  .main {
+    top: 55%;
+  }
   .card_1,
   .card_2,
   .card_3 {
@@ -133,23 +135,27 @@ form {
   }
 
   .stats-info {
-    font-size: 12px;
+    font-size: 14px;
     width: 150px;
     height: 175px;
   }
 
-  form {
-    width: 225px;
+  .form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 320px;
+    height: 120px;
   }
 
   .text,
   button {
     height: 50px;
-    width: 95px;
+    width: 125px;
     font-size: 21px;
   }
 
-  .wrapper {
-    margin-top: 50px;
+  button {
+    padding: 5px;
   }
 }
