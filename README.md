@@ -1,1 +1,2 @@
 # jackpot
+Try your luck!
