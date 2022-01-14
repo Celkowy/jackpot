@@ -1,2 +1,2 @@
 # jackpot
-Try your luck!
+Try your luck! You win some, you lose some
